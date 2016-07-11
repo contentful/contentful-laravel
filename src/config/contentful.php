@@ -1,6 +1,6 @@
 <?php
 /**
- * @copyright 2015 Contentful GmbH
+ * @copyright 2016 Contentful GmbH
  * @license   MIT
  */
 
