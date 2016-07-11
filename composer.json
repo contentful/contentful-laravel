@@ -1,0 +1,21 @@
+{
+  "name": "contentful/laravel",
+  "description": "Integrates the Contentful PHP SDK with Laravel.",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.5.9",
+    "illuminate/support": "~5.0",
+    "contentful/contentful": "~0.6.4@beta"
+  },
+  "autoload": {
+    "psr-4": {
+      "Contentful\\Laravel\\": "src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.6-dev"
+    }
+  }
+}
