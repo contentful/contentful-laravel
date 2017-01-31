@@ -17,7 +17,7 @@ Since this package is in beta, you'll need to modify your `composer.json` with t
 ```json
 {
     "prefer-stable": true,
-    "minimum-stability": dev
+    "minimum-stability": "dev"
 }
 ```
 
