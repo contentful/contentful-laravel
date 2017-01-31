@@ -12,25 +12,36 @@ The SDK is currently in beta. The API might change at any time.
 
 # Setup
 
-To add this package to your `composer.json` and install it execute the following command:
+Since this package is in beta, you'll need to modify your `composer.json` with these settings:
+
+```json
+{
+    "prefer-stable": true,
+    "minimum-stability": dev
+}
+```
+
+Then install the package:
 
 ```bash
-php composer.phar require contentful/contentful-bundle:@beta
+php composer require contentful/laravel
 ````
 
 Add the service provider to the `providers` array in config/app.php:
 
-```
-'Contentful\Laravel\ContentfulServiceProvider',
+```php
+'providers' => [
+    Contentful\Laravel\ContentfulServiceProvider::class,
+],
 ```
 
 ## Configuration
 
 Publish the config file:
 
-`````
-php artisan vendor:publish
-`````
+```sh
+php artisan vendor:publish --provider="Contentful/Laravel/ContentfulServiceProvider"
+```
 
 This will add contentful.php to your /config folder. Next, open that file and add your space ID and API key.
 
