@@ -12,19 +12,10 @@ The SDK is currently in beta. The API might change at any time.
 
 # Setup
 
-Since this package is in beta, you'll need to modify your `composer.json` with these settings:
-
-```json
-{
-    "prefer-stable": true,
-    "minimum-stability": "dev"
-}
-```
-
-Then install the package:
+To add this package to your `composer.json` and install it execute the following command:
 
 ```bash
-php composer require contentful/laravel
+php composer require contentful/laravel@beta
 ````
 
 Add the service provider to the `providers` array in config/app.php:
