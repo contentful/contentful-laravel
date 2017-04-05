@@ -39,7 +39,7 @@ This will add contentful.php to your /config folder. Next, open that file and ad
 License
 =======
 
-Copyright (c) 2016 Contentful GmbH. Code released under the MIT license. See [LICENSE][2] for further details.
+Copyright (c) 2016-2017 Contentful GmbH. Code released under the MIT license. See [LICENSE][2] for further details.
 
  [1]: https://www.contentful.com
  [2]: LICENSE
