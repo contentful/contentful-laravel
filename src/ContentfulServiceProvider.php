@@ -48,8 +48,7 @@ class ContentfulServiceProvider extends ServiceProvider
       return new DeliveryClient(
           $config['delivery.token'],
           $config['delivery.space'],
-          $config['delivery.preview'],
-          new NullLogger()
+          $config['delivery.preview']
       );
     });
   }
