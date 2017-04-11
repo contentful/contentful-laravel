@@ -18,5 +18,10 @@ return [
   /**
    * Controls whether Contentful's Delivery or Preview API is accessed
    */
-  'delivery.preview' => false
+  'delivery.preview' => false,
+
+   /**
+    * Sets the locale in which to fetch content by default. NULL means the space'd default locale will be used
+    */
+  'delivery.defaultLocale' => null
 ];
