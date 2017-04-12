@@ -49,7 +49,7 @@ class ContentfulServiceProvider extends ServiceProvider
           $config['delivery.token'],
           $config['delivery.space'],
           $config['delivery.preview'],
-          new NullLogger()
+          $config['delivery.defaultLocale']
       );
     });
   }
