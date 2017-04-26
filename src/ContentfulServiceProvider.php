@@ -8,7 +8,6 @@ namespace Contentful\Laravel;
 
 use Illuminate\Support\ServiceProvider;
 use Contentful\Delivery\Client as DeliveryClient;
-use Contentful\Log\NullLogger;
 
 class ContentfulServiceProvider extends ServiceProvider
 {
