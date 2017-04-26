@@ -3,7 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased](https://github.com/contentful/contentful-laravel/compare/0.8.0-beta...HEAD)
+## [1.0.0](https://github.com/contentful/contentful-laravel/tree/1.0.0) (2017-04-26)
+
+### Changed
+* Use version 1.0 of the Contentful SDK.
 
 ## [0.8.0-beta](https://github.com/contentful/contentful-laravel/tree/0.8.0-beta) (2017-04-12)
 
