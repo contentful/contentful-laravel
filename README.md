@@ -8,14 +8,12 @@ Laravel integration for the Contentful SDK.
 
 The SDK requires at least PHP 5.5.9. PHP 7 is supported.
 
-The SDK is currently in beta. The API might change at any time. 
-
 # Setup
 
 To add this package to your `composer.json` and install it execute the following command:
 
 ```bash
-php composer require contentful/laravel@beta
+php composer require contentful/laravel
 ````
 
 Add the service provider to the `providers` array in config/app.php:
