@@ -11,6 +11,8 @@ use Contentful\Delivery\Client as DeliveryClient;
 
 class ContentfulServiceProvider extends ServiceProvider
 {
+  const VERSION = '2.0.0-dev';
+
   /**
    * Indicates if loading of the provider is deferred.
    *
@@ -44,12 +46,12 @@ class ContentfulServiceProvider extends ServiceProvider
     $this->app->singleton(DeliveryClient::class, function($app) {
       $config = $app['config']['contentful'];
 
-      return new DeliveryClient(
+      return (new DeliveryClient(
           $config['delivery.token'],
           $config['delivery.space'],
           $config['delivery.preview'],
           $config['delivery.defaultLocale']
-      );
+      ))->setIntegration('contentful.laravel', self::VERSION);
     });
   }
 
