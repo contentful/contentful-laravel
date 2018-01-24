@@ -20,6 +20,14 @@
   "extra": {
     "branch-alias": {
       "dev-master": "2.1.0-dev"
+    },
+    "laravel": {
+        "providers": [
+            "Contentful\\Laravel\\ContentfulServiceProvider"
+        ],
+        "aliases": {
+            "ContentfulDelivery": "Contentful\\Laravel\\Facades\\ContentfulDelivery"
+        }
     }
   }
 }
