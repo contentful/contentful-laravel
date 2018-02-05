@@ -8,20 +8,20 @@ return [
     /**
      * The ID of the space you want to access
      */
-    'delivery.space' => '',
+    'delivery.space' => env('CONTENTFUL_SPACE_ID'),
 
     /**
      * An API key for the above specified space
      */
-    'delivery.token' => '',
+    'delivery.token' => env('CONTENTFUL_DELIVERY_TOKEN'),
 
     /**
      * Controls whether Contentful's Delivery or Preview API is accessed
      */
-    'delivery.preview' => false,
+    'delivery.preview' => env('CONTENTFUL_USE_PREVIEW', false),
 
     /**
      * Sets the locale in which to fetch content by default. NULL means the space'd default locale will be used
      */
-    'delivery.defaultLocale' => null
+    'delivery.defaultLocale' => env('CONTENTFUL_DEFAULT_LOCALE'),
 ];
