@@ -34,7 +34,7 @@ php artisan vendor:publish --provider="Contentful\Laravel\ContentfulServiceProvi
 
 This will add `contentful.php` to your `/config` folder. Next, add your space ID and API key to your `.env` file:
 
-    CONTENTFUL_DELIVERY_SPACE="cfexampleapi"
+    CONTENTFUL_SPACE_ID="cfexampleapi"
     CONTENTFUL_DELIVERY_TOKEN="b4c0n73n7fu1"
 
 ## License
