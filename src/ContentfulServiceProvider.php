@@ -49,8 +49,10 @@ class ContentfulServiceProvider extends ServiceProvider
             return (new DeliveryClient(
                 $config['delivery.token'],
                 $config['delivery.space'],
+                $config['delivery.environment'],
                 $config['delivery.preview'],
-                $config['delivery.defaultLocale']
+                $config['delivery.defaultLocale'],
+                $config['delivery.options']
             ))->setIntegration('contentful.laravel', self::VERSION);
         });
     }
