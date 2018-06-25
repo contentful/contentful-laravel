@@ -14,7 +14,7 @@ use Illuminate\Support\ServiceProvider;
 
 class ContentfulServiceProvider extends ServiceProvider
 {
-    const VERSION = '3.0.0';
+    const VERSION = '3.1.0-dev';
 
     /**
      * Indicates if loading of the provider is deferred.
