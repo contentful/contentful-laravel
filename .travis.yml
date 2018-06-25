@@ -1,16 +1,65 @@
 language: php
 
-php:
-  - 5.6
-  - 7.0
-  - 7.1
+env:
+  global:
+    - GH_REPO="github.com/${TRAVIS_REPO_SLUG}.git"
+    - BUILD_LEAD=0
+    - SYNTAX_TEST=0
 
 matrix:
   fast_finish: true
+  include:
+    - php: 7.1
+      env: SYNTAX_TEST=1
+    - php: 7.0
+    - php: 7.1
+      env: BUILD_LEAD=1
+    - php: 7.2
+
+branches:
+  only:
+    - master
+
+before_install:
+  - |
+    # Disable XDebug
+    #
+    # XDebug makes PHPUnit and PHP-CS-Fixer slow.
+    # We need it only for generating the code coverage report,
+    # so we disable it everywhere but for the build lead.
+    if [ $BUILD_LEAD == 0 ]
+    then
+      phpenv config-rm xdebug.ini
+    fi
 
 install:
-  - composer self-update
-  - composer install
+  - |
+    # Install dependencies
+    # We don't need to install dependencies when doing the syntax check.
+    if [ $SYNTAX_TEST == 0 ]
+    then
+      composer install
+    fi
 
 script:
- - vendor/bin/parallel-lint src/
+  - |
+    # PHPUnit tests
+    if [ $SYNTAX_TEST == 0 ]
+    then
+      php vendor/bin/phpunit --stop-on-error --stop-on-failure -v
+    fi
+
+  - |
+    # Syntax tests
+    #
+    # We use PHP-CS-Fixer to check for syntax and style errors,
+    # but we run a separate build for that to take advantage of build parallelism.
+    if [ $SYNTAX_TEST == 1 ]
+    then
+      wget http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -q -O php-cs-fixer.phar
+      php php-cs-fixer.phar fix --dry-run --stop-on-violation -v
+    fi
+
+notifications:
+  slack:
+    secure: CWte1ghdLFsmaHHsHCcFpukhliAUrZR8TNWXFXdNxv6Coc4DYQoBiXhSbU0zzQo8lTtSKlUmrDJkiRnbJpAo+bYMWjWiJJURS958bF9aqYaX1GILbeLfn0PMTVJvO+2d8Ywf+McX2lXvaynYVANB6MIm1q1/L5kCf6yMssf9y3SfasVd93BthzulqDfKD/dN9rPpK/zA5BE6IEzkmpwrYW/gnK5NWdsVp6UpNBk9/a5bW3zzTgpEtPQvURL4iHqbVZHBHdIWK8k4sPY13mvOfN1oIJp0VmPhisLveF/v8sR32yl7ddyLrFItsLg08tEYBOPwNoxq34EhhdUtWnyNN8BNAU6APjatsdCCLLKReqJFsGsNQ96xBfZpm9EsXmZotK4Q7Qf++j53JGjxcT+dS6eTU4NCCjoAXCYgKWwIGLq6Pri3rFXJw7o7VQ03cMqesq10fel9rPU0RSRsb7GrCMMUGamI4sm2lYEJFcs/6HKIADq140To0oAlzchsdDTOMLZEm60orsxcxyWmMCtS53v2njnO0NR2WaZmGyhuPsFpY7X4HOYRLZEb1jeW/8tKJNh8plEjUCEsu+5lFvDE+gUnDgBEP44h+hyBq0BW840rCK/R7/IjfAQIIKbERF3c2C7u9HHIEAD9CgunB4xYYMBLGlhwgP2Yjkn/9OUiJ6k=
