@@ -1,17 +1,20 @@
 <?php
+
 /**
- * @copyright 2016-2017 Contentful GmbH
+ * This file is part of the contentful/laravel package.
+ *
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
 namespace Contentful\Laravel;
 
-use Contentful\Delivery\Client as DeliveryClient;
+use Contentful\Delivery\Client;
 use Illuminate\Support\ServiceProvider;
 
 class ContentfulServiceProvider extends ServiceProvider
 {
-    const VERSION = '2.1.0-dev';
+    const VERSION = '3.0.0-dev';
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -22,15 +25,13 @@ class ContentfulServiceProvider extends ServiceProvider
 
     /**
      * Register any other events for your application.
-     *
-     * @return void
      */
     public function boot()
     {
-        $config_file = realpath(__DIR__ . '/config/contentful.php');
+        $config_file = \realpath(__DIR__.'/config/contentful.php');
 
         $this->publishes([
-            $config_file => $this->app->make('path.config') . '/contentful.php',
+            $config_file => $this->app->make('path.config').'/contentful.php',
         ]);
 
         $this->mergeConfigFrom($config_file, 'contentful');
@@ -38,22 +39,23 @@ class ContentfulServiceProvider extends ServiceProvider
 
     /**
      * Register the service provider.
-     *
-     * @return void
      */
     public function register()
     {
-        $this->app->singleton(DeliveryClient::class, function ($app) {
+        $this->app->singleton(Client::class, function ($app) {
             $config = $app['config']['contentful'];
 
-            return (new DeliveryClient(
+            $client = new Client(
                 $config['delivery.token'],
                 $config['delivery.space'],
                 $config['delivery.environment'],
                 $config['delivery.preview'],
                 $config['delivery.defaultLocale'],
                 $config['delivery.options']
-            ))->setIntegration('contentful.laravel', self::VERSION);
+            );
+            $client->setIntegration('contentful.laravel', self::VERSION);
+
+            return $client;
         });
     }
 
@@ -64,6 +66,6 @@ class ContentfulServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [DeliveryClient::class];
+        return [Client::class];
     }
 }

@@ -1,13 +1,15 @@
 <?php
+
 /**
- * @copyright 2016-2017 Contentful GmbH
+ * This file is part of the contentful/laravel package.
+ *
+ * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
 
 namespace Contentful\Laravel\Facades;
 
-use Contentful\Delivery\Client as DeliveryClient;
-
+use Contentful\Delivery\Client;
 use Illuminate\Support\Facades\Facade;
 
 class ContentfulDelivery extends Facade
@@ -15,10 +17,10 @@ class ContentfulDelivery extends Facade
     /**
      * Get the registered name of the component.
      *
-     * @return  string
+     * @return string
      */
-     protected static function getFacadeAccessor()
-     {
-         return DeliveryClient::class;
-     }
+    protected static function getFacadeAccessor()
+    {
+        return Client::class;
+    }
 }
