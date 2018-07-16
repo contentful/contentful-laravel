@@ -1,19 +1,23 @@
 # Contentful Laravel Package
 
-[![Build Status](https://travis-ci.org/contentful/contentful-laravel.svg?branch=master)](https://travis-ci.org/contentful/contentful-laravel)
+[![Packagist](https://img.shields.io/packagist/v/contentful/laravel.svg?style=for-the-badge)](https://packagist.org/packages/contentful/laravel)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/contentful/laravel.svg?style=for-the-badge)](https://packagist.org/packages/contentful/laravel)
+[![Travis](https://img.shields.io/travis/contentful/contentful-laravel.svg?style=for-the-badge)](https://travis-ci.org/contentful/contentful-laravel)
+[![Packagist](https://img.shields.io/github/license/contentful/contentful-laravel.svg?style=for-the-badge)](https://packagist.org/packages/contentful/laravel)
+[![Codecov](https://img.shields.io/codecov/c/github/contentful/contentful-laravel.svg?style=for-the-badge)](https://codecov.io/gh/contentful/contentful-laravel)
 
-Laravel package for the Contentful CDA SDK.
+## What is Contentful?
 
-[Contentful](https://www.contentful.com) is a content management platform for web applications, mobile apps and connected devices. It allows you to create, edit & manage content in the cloud and publish it anywhere via powerful API. Contentful offers tools for managing editorial teams and enabling cooperation between organizations.
+[Contentful](https://www.contentful.com) provides a content infrastructure for digital teams to power content in websites, apps, and devices. Unlike a CMS, Contentful was built to integrate with the modern software stack. It offers a central hub for structured content, powerful management and delivery APIs, and a customizable web app that enable developers and content creators to ship digital products faster.
 
-The SDK requires at least PHP 5.6. PHP 7 is supported.
+The SDK requires PHP 7 or higher.
 
 ## Setup
 
 To add this package to your `composer.json` and install it execute the following command:
 
 ``` sh
-php composer require contentful/laravel
+composer require contentful/laravel
 ```
 
 Add the service provider to the `providers` array in `config/app.php`:
@@ -39,4 +43,4 @@ This will add `contentful.php` to your `/config` folder. Next, add your space ID
 
 ## License
 
-Copyright (c) 2016-2017 Contentful GmbH. Code released under the MIT license. See [LICENSE](LICENSE) for further details.
+Copyright (c) 2016-2018 Contentful GmbH. Code released under the MIT license. See [LICENSE](LICENSE) for further details.

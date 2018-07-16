@@ -10,6 +10,7 @@ This file is part of the contentful/laravel package.
 COMMENT;
 
 $finder = PhpCsFixer\Finder::create()
+    ->in('scripts')
     ->in('src')
     ->in('tests')
 ;
