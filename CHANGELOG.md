@@ -3,13 +3,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased](https://github.com/contentful/contentful-core.php/compare/4.0.0...HEAD)
+## [Unreleased](https://github.com/contentful/contentful-laravel/compare/4.0.0...HEAD)
 
 <!-- PENDING-CHANGES -->
 > No meaningful changes since last release.
 <!-- /PENDING-CHANGES -->
 
-## [4.0.0](https://github.com/contentful/contentful-core.php/tree/4.0.0) (2018-11-12)
+## [4.0.0](https://github.com/contentful/contentful-laravel/tree/4.0.0) (2018-11-12)
 
 **ATTENTION**: This release contains breaking changes. Please take extra care when updating to this version.
 
