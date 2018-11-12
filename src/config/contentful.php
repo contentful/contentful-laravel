@@ -7,6 +7,11 @@
  * @license   MIT
  */
 
+declare(strict_types=1);
+
+use Contentful\Delivery\ClientOptions;
+use Illuminate\Foundation\Application;
+
 return [
     /*
      * The ID of the space you want to access.
@@ -26,7 +31,7 @@ return [
     /*
      * Controls whether Contentful's Delivery or Preview API is accessed.
      */
-    'delivery.preview' => env('CONTENTFUL_USE_PREVIEW', false),
+    'delivery.preview' => (bool) env('CONTENTFUL_USE_PREVIEW', \false),
 
     /*
      * The default locale to use when querying the API.
@@ -34,7 +39,10 @@ return [
     'delivery.defaultLocale' => env('CONTENTFUL_DEFAULT_LOCALE'),
 
     /*
-     * An array of further client options. See Contentful\Delivery\Client::__construct() for more.
+     * A closure which manipulates a ClientOptions object.
+     * See Contentful\Delivery\ClientOptions for more.
      */
-    'delivery.options' => [],
+    'delivery.options' => function (ClientOptions $options, Application $application) {
+        // Update $options however you prefer
+    },
 ];

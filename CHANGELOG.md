@@ -5,6 +5,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/contentful/contentful-laravel/compare/3.0.0...HEAD)
 
+<!-- PENDING-CHANGES -->
+**ATTENTION**: This release contains breaking changes. Please take extra care when updating to this version.
+
+### Changed
+* Use version 4.0 of the Contentful SDK. **[BREAKING]** This release contains breaking changes, you can read more about them in the SDK Changelog for [version 4.0.0](https://github.com/contentful/contentful.php/releases/tag/4.0.0).
+<!-- /PENDING-CHANGES -->
+
 ## [3.0.0](https://github.com/contentful/contentful-laravel/tree/3.0.0) (2018-06-25)
 
 **ATTENTION**: This release contains breaking changes. Please take extra care when updating to this version.

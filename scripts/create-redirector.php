@@ -6,6 +6,9 @@
  * @copyright 2015-2018 Contentful GmbH
  * @license   MIT
  */
+
+declare(strict_types=1);
+
 $travisRepoSlug = \getenv('TRAVIS_REPO_SLUG');
 $indexFile = $argv[1];
 
@@ -17,7 +20,7 @@ $tags = \array_filter($tags, function ($tag) {
 
 // We remove all non-stable versions from the list as we don't want to direct the docs to them by default
 $tags = \array_filter($tags, function ($tag) {
-    return false === \mb_strpos($tag, '-');
+    return \false === \mb_strpos($tag, '-');
 });
 
 \usort($tags, function ($a, $b) {
