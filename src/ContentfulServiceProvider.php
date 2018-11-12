@@ -28,13 +28,13 @@ class ContentfulServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $config_file = \realpath(__DIR__.'/config/contentful.php');
+        $configFile = (string) \realpath(__DIR__.'/config/contentful.php');
 
         $this->publishes([
-            $config_file => $this->app->make('path.config').'/contentful.php',
+            $configFile => $this->app->make('path.config').'/contentful.php',
         ]);
 
-        $this->mergeConfigFrom($config_file, 'contentful');
+        $this->mergeConfigFrom($configFile, 'contentful');
     }
 
     /**
