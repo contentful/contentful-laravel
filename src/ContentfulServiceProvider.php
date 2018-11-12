@@ -7,21 +7,24 @@
  * @license   MIT
  */
 
+declare(strict_types=1);
+
 namespace Contentful\Laravel;
 
+use Contentful\Core\Api\IntegrationInterface;
 use Contentful\Delivery\Client;
+use Contentful\Delivery\ClientOptions;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
-class ContentfulServiceProvider extends ServiceProvider
+class ContentfulServiceProvider extends ServiceProvider implements IntegrationInterface
 {
-    const VERSION = '3.1.0-dev';
-
     /**
      * Indicates if loading of the provider is deferred.
      *
      * @var bool
      */
-    protected $defer = true;
+    protected $defer = \true;
 
     /**
      * Register any other events for your application.
@@ -42,30 +45,54 @@ class ContentfulServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(Client::class, function ($app) {
+        $this->app->singleton(Client::class, function (Application $app): Client {
             $config = $app['config']['contentful'];
+
+            $options = new ClientOptions();
+            if ($config['delivery.preview']) {
+                $options->usingDeliveryApi();
+            }
+            if ($config['delivery.defaultLocale']) {
+                $options->withDefaultLocale($config['delivery.defaultLocale']);
+            }
+
+            if (\is_callable($config['delivery.options'])) {
+                ($config['delivery.options'])($options, $app);
+            }
 
             $client = new Client(
                 $config['delivery.token'],
                 $config['delivery.space'],
                 $config['delivery.environment'],
-                $config['delivery.preview'],
-                $config['delivery.defaultLocale'],
-                $config['delivery.options']
+                $options
             );
-            $client->setIntegration('contentful.laravel', self::VERSION);
+            $client->useIntegration($this);
 
             return $client;
         });
     }
 
     /**
-     * Get the services provided by the provider.
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function provides()
     {
         return [Client::class];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getIntegrationName(): string
+    {
+        return 'contentful.laravel';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getIntegrationPackageName(): string
+    {
+        return 'contentful/laravel';
     }
 }

@@ -16,4 +16,12 @@
             <directory suffix=".php">src</directory>
         </whitelist>
     </filter>
+
+    <php>
+        <env name="CONTENTFUL_SPACE_ID" value="cfexampleapi" />
+        <env name="CONTENTFUL_DELIVERY_TOKEN" value="b4c0n73n7fu1" />
+        <env name="CONTENTFUL_ENVIRONMENT_ID" value="master" />
+        <env name="CONTENTFUL_USE_PREVIEW" value="1" />
+        <env name="CONTENTFUL_DEFAULT_LOCALE" value="en-US" />
+    </php>
 </phpunit>
