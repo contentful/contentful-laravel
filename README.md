@@ -42,4 +42,4 @@ This will add `contentful.php` to your `/config` folder. Next, add your space ID
 
 ## License
 
-Copyright (c) 2016-2018 Contentful GmbH. Code released under the MIT license. See [LICENSE](LICENSE) for further details.
+Copyright (c) 2015-2019 Contentful GmbH. Code released under the MIT license. See [LICENSE](LICENSE) for further details.
