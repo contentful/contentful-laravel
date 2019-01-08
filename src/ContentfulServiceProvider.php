@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/laravel package.
  *
- * @copyright 2015-2018 Contentful GmbH
+ * @copyright 2015-2019 Contentful GmbH
  * @license   MIT
  */
 
@@ -50,8 +50,9 @@ class ContentfulServiceProvider extends ServiceProvider implements IntegrationIn
 
             $options = new ClientOptions();
             if ($config['delivery.preview']) {
-                $options->usingDeliveryApi();
+                $options->usingPreviewApi();
             }
+
             if ($config['delivery.defaultLocale']) {
                 $options->withDefaultLocale($config['delivery.defaultLocale']);
             }

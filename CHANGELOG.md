@@ -6,7 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased](https://github.com/contentful/contentful-laravel/compare/4.0.0...HEAD)
 
 <!-- PENDING-CHANGES -->
-> No meaningful changes since last release.
+### Fixed
+* Fixed a bug where the SDK would use the Delivery API regardless of configuration.
 <!-- /PENDING-CHANGES -->
 
 ## [4.0.0](https://github.com/contentful/contentful-laravel/tree/4.0.0) (2018-11-12)
