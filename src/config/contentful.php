@@ -31,7 +31,7 @@ return [
     /*
      * Controls whether Contentful's Delivery or Preview API is accessed.
      */
-    'delivery.preview' => (bool) env('CONTENTFUL_USE_PREVIEW', \false),
+    'delivery.preview' => (bool) env('CONTENTFUL_USE_PREVIEW', false),
 
     /*
      * The default locale to use when querying the API.
