@@ -24,7 +24,7 @@ class ContentfulServiceProvider extends ServiceProvider implements IntegrationIn
      *
      * @var bool
      */
-    protected $defer = \true;
+    protected $defer = true;
 
     /**
      * Register any other events for your application.
