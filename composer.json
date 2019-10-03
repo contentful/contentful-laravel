@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.0",
-        "laravel/framework": "~5.4",
+        "laravel/framework": "~6.0",
         "contentful/contentful": "^4.0",
         "contentful/core": "^2.2"
     },
