@@ -5,12 +5,12 @@
     "license": "MIT",
     "require": {
         "php": "^7.0",
-        "laravel/framework": "~5.4",
+        "laravel/framework": "~5.4|~6.0",
         "contentful/contentful": "^4.0",
         "contentful/core": "^2.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.0|^7.0",
+        "phpunit/phpunit": "^6.0|^7.0|^8.0",
         "orchestra/testbench": "^3.5"
     },
     "autoload": {
