@@ -2,8 +2,8 @@
 
 [![Packagist](https://img.shields.io/packagist/v/contentful/laravel.svg?style=for-the-badge)](https://packagist.org/packages/contentful/laravel)
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/contentful/laravel.svg?style=for-the-badge)](https://packagist.org/packages/contentful/laravel)
-[![CircleCI branch](https://img.shields.io/circleci/project/github/contentful/contentful-laravel/master.svg?style=for-the-badge)](https://circleci.com/gh/contentful/contentful-laravel)
 [![Packagist](https://img.shields.io/github/license/contentful/contentful-laravel.svg?style=for-the-badge)](https://packagist.org/packages/contentful/laravel)
+<img height="28px" src="https://circleci.com/gh/contentful/contentful-laravel.svg?style=shield"/>
 
 > This library provides an easy-to-use integration between the Laravel framework and the Contentful Delivery SDK. It requires at least PHP 7.0.
 
