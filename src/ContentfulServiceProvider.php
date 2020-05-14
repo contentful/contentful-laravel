@@ -46,25 +46,25 @@ class ContentfulServiceProvider extends ServiceProvider implements IntegrationIn
     public function register()
     {
         $this->app->singleton(Client::class, function (Application $app): Client {
-            $config = $app['config']['contentful'];
+            $config = $app['config'];
 
             $options = new ClientOptions();
-            if ($config['delivery.preview']) {
+            if ($config['contentful.delivery.preview']) {
                 $options->usingPreviewApi();
             }
 
-            if ($config['delivery.defaultLocale']) {
-                $options->withDefaultLocale($config['delivery.defaultLocale']);
+            if ($config['contentful.delivery.defaultLocale']) {
+                $options->withDefaultLocale($config['contentful.delivery.defaultLocale']);
             }
 
-            if (\is_callable($config['delivery.options'])) {
-                ($config['delivery.options'])($options, $app);
+            if (\is_callable($config['contentful.delivery.options'])) {
+                ($config['contentful.delivery.options'])($options, $app);
             }
 
             $client = new Client(
-                $config['delivery.token'],
-                $config['delivery.space'],
-                $config['delivery.environment'],
+                $config['contentful.delivery.token'],
+                $config['contentful.delivery.space'],
+                $config['contentful.delivery.environment'],
                 $options
             );
             $client->useIntegration($this);
