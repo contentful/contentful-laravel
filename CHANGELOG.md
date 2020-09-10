@@ -3,11 +3,17 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased](https://github.com/contentful/contentful-laravel/compare/7.0.1...HEAD)
+## [Unreleased](https://github.com/contentful/contentful-laravel/compare/7.0.2...HEAD)
 
 <!-- PENDING-CHANGES -->
 > No meaningful changes since last release.
 <!-- /PENDING-CHANGES -->
+
+## [7.0.2](https://github.com/contentful/contentful-laravel/tree/7.0.2) (2020-09-10)
+
+### Changed
+
+> Fix closures will not serialize with Laravel 7
 
 ## [7.0.1](https://github.com/contentful/contentful-laravel/tree/7.0.1) (2020-09-10)
 
