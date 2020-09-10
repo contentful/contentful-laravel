@@ -3,11 +3,15 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased](https://github.com/contentful/contentful-laravel/compare/7.0.0...HEAD)
+## [Unreleased](https://github.com/contentful/contentful-laravel/compare/7.0.1...HEAD)
 
 <!-- PENDING-CHANGES -->
 > No meaningful changes since last release.
 <!-- /PENDING-CHANGES -->
+
+## [7.0.1](https://github.com/contentful/contentful-laravel/tree/7.0.1) (2020-09-10)
+
+> No meaningful changes since last release.
 
 ## [7.0.0](https://github.com/contentful/contentful-laravel/tree/7.0.0) (2020-05-14)
 
