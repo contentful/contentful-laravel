@@ -12,6 +12,10 @@ declare(strict_types=1);
 use Contentful\Delivery\ClientOptions;
 use Illuminate\Foundation\Application;
 
+$deliveryOptionsClosure = function (ClientOptions $options, Application $application) {
+    // Update $options however you prefer
+};
+
 return [
     'delivery' => [
         /*
@@ -43,8 +47,6 @@ return [
          * A closure which manipulates a ClientOptions object.
          * See Contentful\Delivery\ClientOptions for more.
          */
-        'options' => function (ClientOptions $options, Application $application) {
-            // Update $options however you prefer
-        },
+        'options' => $deliveryOptionsClosure,
     ],
 ];
