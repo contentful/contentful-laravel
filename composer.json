@@ -5,13 +5,13 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
-        "laravel/framework": "~5.4|~6.0|^7.1",
+        "laravel/framework": "~5.4|~6.0|^7.1|^8.0",
         "contentful/contentful": "^6.0",
         "contentful/core": "^3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5",
-        "orchestra/testbench": "^5.1"
+        "orchestra/testbench": "^5.1|^6.0"
     },
     "autoload": {
         "psr-4": {
