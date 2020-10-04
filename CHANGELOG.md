@@ -3,11 +3,17 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased](https://github.com/contentful/contentful-laravel/compare/8.0.0...HEAD)
+## [Unreleased](https://github.com/contentful/contentful-laravel/compare/8.0.1...HEAD)
 
 <!-- PENDING-CHANGES -->
 > No meaningful changes since last release.
 <!-- /PENDING-CHANGES -->
+
+## [8.0.1](https://github.com/contentful/contentful-laravel/tree/8.0.1) (2020-10-04)
+
+### Changed
+
+> Remove closure from configuration file.
 
 ## [8.0.0](https://github.com/contentful/contentful-laravel/tree/8.0.0) (2020-09-15)
 
