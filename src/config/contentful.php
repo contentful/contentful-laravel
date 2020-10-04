@@ -9,9 +9,6 @@
 
 declare(strict_types=1);
 
-use Contentful\Delivery\ClientOptions;
-use Illuminate\Foundation\Application;
-
 return [
     'delivery' => [
         /*
