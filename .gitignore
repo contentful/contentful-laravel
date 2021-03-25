@@ -3,3 +3,5 @@ composer.lock
 /build
 .php_cs.cache
 /.idea
+/phpstan.phar
+/php-cs-fixer.phar
