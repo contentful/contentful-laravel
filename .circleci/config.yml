@@ -8,11 +8,12 @@ workflows:
         - test72
         - test73
         - test74
+        - test80
 
 jobs:
     lint:
         docker:
-        - image: circleci/php:7.2-cli
+        - image: circleci/php:7.4-cli
         steps:
         - checkout
         - run: { name: "Install dependencies", command: sudo composer self-update && composer install -n --prefer-dist }
@@ -43,9 +44,18 @@ jobs:
         - run: { name: "Install dependencies", command: "sudo composer self-update && composer install -n --prefer-dist" }
         - run: { name: "Test suite", command: "composer test-quick-fail" }
 
+    test80:
+        docker:
+        - image: circleci/php:8.0-cli
+        steps:
+        - checkout
+        - run: { name: "Install dependencies", command: "sudo composer self-update && composer install -n --prefer-dist" }
+        - run: { name: "Test suite", command: "composer test-quick-fail" }
+
     test74:
         environment:
             CC_TEST_REPORTER_ID: 405e5a46d5d2169dad5c398f495ecfa8e1471d0c72d87c7424d3f31a2ec5d8b1
+            XDEBUG_MODE: coverage
         docker:
         - image: circleci/php:7.4-cli
         steps:
