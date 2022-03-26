@@ -3,13 +3,19 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased](https://github.com/contentful/contentful-laravel/compare/8.1.0...HEAD)
+## [Unreleased](https://github.com/contentful/contentful-laravel/compare/8.2.0...HEAD)
 
 <!-- PENDING-CHANGES -->
 > No meaningful changes since last release.
 <!-- /PENDING-CHANGES -->
 
-## [8.1.0](https://github.com/contentful/contentful-laravel/tree/8.1.1) (2021-03-25)
+## [8.2.0](https://github.com/contentful/contentful-laravel/tree/8.2.0) (2022-03-26)
+
+### Added
+
+> Added support for Laravel 9 (thanks @camaech !)
+
+## [8.1.0](https://github.com/contentful/contentful-laravel/tree/8.1.0) (2021-03-25)
 
 ### Added
 
