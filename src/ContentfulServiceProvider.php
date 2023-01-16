@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/laravel package.
  *
- * @copyright 2015-2021 Contentful GmbH
+ * @copyright 2015-2023 Contentful GmbH
  * @license   MIT
  */
 
@@ -31,7 +31,7 @@ class ContentfulServiceProvider extends ServiceProvider implements IntegrationIn
      */
     public function boot()
     {
-        $configFile = (string) \realpath(__DIR__.'/config/contentful.php');
+        $configFile = (string) realpath(__DIR__.'/config/contentful.php');
 
         $this->publishes([
             $configFile => $this->app->make('path.config').'/contentful.php',
