@@ -4,14 +4,15 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "php": "^7.2|^8.0",
-        "laravel/framework": "~5.4|~6.0|^7.1|^8.0|^9.0",
-        "contentful/contentful": "^6.0",
-        "contentful/core": "^3.0"
+        "php": "^8.0",
+        "laravel/framework": "^8.0|^9.0",
+        "contentful/contentful": "^7.0",
+        "contentful/core": "^4.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5",
-        "orchestra/testbench": "^5.1|^6.0"
+        "orchestra/testbench": "^5.1|^6.0",
+        "phpstan/phpstan": "^1.9"
     },
     "autoload": {
         "psr-4": {
@@ -26,14 +27,10 @@
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-quick-fail": "php vendor/bin/phpunit --stop-on-error --stop-on-failure -v",
-        "lint-syntax": "$([ -f php-cs-fixer.phar ] && echo \"php php-cs-fixer.phar\" || echo \"php-cs-fixer\") fix --dry-run --stop-on-violation -v",
-        "lint-static-analysis": "$([ -f phpstan.phar ] && echo \"php phpstan.phar\" || echo \"phpstan\") analyse --level=max src/",
+        "lint-static-analysis": "php vendor/bin/phpstan analyse src --level=5",
         "release": "php vendor/contentful/core/scripts/release.php"
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "4.1.0-dev"
-        },
         "laravel": {
             "providers": [
                 "Contentful\\Laravel\\ContentfulServiceProvider"
