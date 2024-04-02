@@ -5,7 +5,7 @@
 [![Packagist](https://img.shields.io/github/license/contentful/contentful-laravel.svg?style=for-the-badge)](https://packagist.org/packages/contentful/laravel)
 <img height="28px" src="https://circleci.com/gh/contentful/contentful-laravel.svg?style=shield"/>
 
-> This library provides an easy-to-use integration between the Laravel framework and the Contentful Delivery SDK. It requires at least PHP 7.2 or PHP 8.0 and up.
+> This library provides an easy-to-use integration between the Laravel framework and the Contentful Delivery SDK. It requires PHP 8.0 and up.
 
 ## Setup
 
