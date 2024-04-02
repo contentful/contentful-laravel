@@ -10,6 +10,7 @@ workflows:
       - test80
       - test81
       - test82
+      - test83
 jobs:
   lintStaticAnalysis:
     docker:
@@ -57,6 +58,14 @@ jobs:
   test82:
     docker:
       - image: cimg/php:8.2
+    steps:
+      - checkout
+      - run: { name: "Install dependencies", command: "sudo composer self-update && composer install -n --prefer-dist" }
+      - run: { name: "Test suite", command: "composer test-quick-fail" }
+
+  test83:
+    docker:
+      - image: cimg/php:8.3
     steps:
       - checkout
       - run: { name: "Install dependencies", command: "sudo composer self-update && composer install -n --prefer-dist" }
