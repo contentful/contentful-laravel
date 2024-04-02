@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/laravel package.
  *
- * @copyright 2015-2023 Contentful GmbH
+ * @copyright 2015-2024 Contentful GmbH
  * @license   MIT
  */
 

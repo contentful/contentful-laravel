@@ -34,7 +34,7 @@ jobs:
           command: sudo composer self-update && composer install -n --prefer-dist
       - run:
           name: Install php-cs-fixer
-          command: mkdir -p tools/php-cs-fixer && composer require --working-dir=tools/php-cs-fixer friendsofphp/php-cs-fixer
+          command: mkdir -p tools/php-cs-fixer && composer require --dev --working-dir=tools/php-cs-fixer friendsofphp/php-cs-fixer
       - run:
           name: Run syntax test
           command: tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --dry-run --stop-on-violation -v

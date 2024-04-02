@@ -3,7 +3,7 @@
 /**
  * This file is part of the contentful/laravel package.
  *
- * @copyright 2015-2023 Contentful GmbH
+ * @copyright 2015-2024 Contentful GmbH
  * @license   MIT
  */
 
@@ -73,25 +73,16 @@ class ContentfulServiceProvider extends ServiceProvider implements IntegrationIn
         });
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function provides()
     {
         return [Client::class];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getIntegrationName(): string
     {
         return 'contentful.laravel';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getIntegrationPackageName(): string
     {
         return 'contentful/laravel';
