@@ -7,10 +7,13 @@ workflows:
     jobs:
       - lintSyntax
       - lintStaticAnalysis
+      - checkBcBreaks
       - test80
       - test81
       - test82
       - test83
+      - test84
+
 jobs:
   lintStaticAnalysis:
     docker:
@@ -34,10 +37,23 @@ jobs:
           command: sudo composer self-update && composer install -n --prefer-dist
       - run:
           name: Install php-cs-fixer
-          command: mkdir -p tools/php-cs-fixer && composer require --dev --working-dir=tools/php-cs-fixer friendsofphp/php-cs-fixer
+          command: mkdir -p tools/php-cs-fixer && composer require --working-dir=tools/php-cs-fixer friendsofphp/php-cs-fixer
       - run:
           name: Run syntax test
           command: tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --dry-run --stop-on-violation -v
+
+  checkBcBreaks:
+    docker:
+      - image: cimg/php:8.1
+    steps:
+      - checkout
+      - run:
+          name: "Install dependencies"
+          command: sudo composer self-update && composer install -n --prefer-dist
+      - run:
+          name: Check for backwards-compatibility breaks
+          command: composer run test-for-bc-breaks || true
+
 
   test80:
     docker:
@@ -61,11 +77,20 @@ jobs:
     steps:
       - checkout
       - run: { name: "Install dependencies", command: "sudo composer self-update && composer install -n --prefer-dist" }
+      # This test is knee-kapped for now, since a PHP bug causes the tests to segfault. See v7.0.0 changelog.
       - run: { name: "Test suite", command: "composer test-quick-fail" }
 
   test83:
     docker:
       - image: cimg/php:8.3
+    steps:
+      - checkout
+      - run: { name: "Install dependencies", command: "sudo composer self-update && composer install -n --prefer-dist" }
+      - run: { name: "Test suite", command: "composer test-quick-fail" }
+
+  test84:
+    docker:
+      - image: cimg/php:8.4
     steps:
       - checkout
       - run: { name: "Install dependencies", command: "sudo composer self-update && composer install -n --prefer-dist" }
