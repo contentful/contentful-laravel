@@ -60,7 +60,7 @@ jobs:
       - image: cimg/php:8.0
     steps:
       - checkout
-      - run: { name: "Install dependencies", command: "sudo composer self-update && composer install -n --prefer-dist" }
+      - run: { name: "Install dependencies", command: "sudo composer self-update && composer install -n --prefer-dist --ignore-platform-reqs" }
       - run: { name: "Test suite", command: "composer test-quick-fail" }
 
   test81:
