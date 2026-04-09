@@ -8,8 +8,6 @@ workflows:
       - lintSyntax
       - lintStaticAnalysis
       - checkBcBreaks
-      - test80
-      - test81
       - test82
       - test83
       - test84
@@ -17,7 +15,7 @@ workflows:
 jobs:
   lintStaticAnalysis:
     docker:
-      - image: cimg/php:8.1
+      - image: cimg/php:8.2
     steps:
       - checkout
       - run:
@@ -29,7 +27,7 @@ jobs:
 
   lintSyntax:
     docker:
-      - image: cimg/php:8.1
+      - image: cimg/php:8.2
     steps:
       - checkout
       - run:
@@ -44,7 +42,7 @@ jobs:
 
   checkBcBreaks:
     docker:
-      - image: cimg/php:8.1
+      - image: cimg/php:8.2
     steps:
       - checkout
       - run:
@@ -54,22 +52,6 @@ jobs:
           name: Check for backwards-compatibility breaks
           command: composer run test-for-bc-breaks || true
 
-
-  test80:
-    docker:
-      - image: cimg/php:8.0
-    steps:
-      - checkout
-      - run: { name: "Install dependencies", command: "sudo composer self-update && composer install -n --prefer-dist" }
-      - run: { name: "Test suite", command: "composer test-quick-fail" }
-
-  test81:
-    docker:
-      - image: cimg/php:8.1
-    steps:
-      - checkout
-      - run: { name: "Install dependencies", command: "sudo composer self-update && composer install -n --prefer-dist" }
-      - run: { name: "Test suite", command: "composer test-quick-fail" }
 
   test82:
     docker:
