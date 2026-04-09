@@ -12,6 +12,12 @@
         </include>
     </source>
 
+    <coverage>
+        <report>
+            <html outputDirectory="build/coverage" lowUpperBound="35" highLowerBound="70" />
+            <clover outputFile="build/logs/clover.xml"/>
+        </report>
+    </coverage>
     <php>
         <env name="CONTENTFUL_SPACE_ID" value="cfexampleapi" />
         <env name="CONTENTFUL_DELIVERY_TOKEN" value="b4c0n73n7fu1" />
