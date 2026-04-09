@@ -26,7 +26,7 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "test-quick-fail": "php vendor/bin/phpunit --stop-on-error --stop-on-failure",
+        "test-quick-fail": "php vendor/bin/phpunit --stop-on-error --stop-on-failure --no-coverage",
         "lint-static-analysis": "php vendor/bin/phpstan analyse src --level=5",
         "release": "php vendor/contentful/core/scripts/release.php"
     },
