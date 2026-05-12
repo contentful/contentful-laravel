@@ -105,7 +105,3 @@ This calls `vendor/contentful/core/scripts/release.php`. The CHANGELOG is mainta
 | CodeQL (GitHub Actions) | Push/PR to `master` (workflow files only) | Scans GitHub Actions workflow files for security issues |
 
 Note: The main PHP test matrix (multi-version PHPUnit/Laravel/PHP runs) is run via CircleCI (legacy — `.circleci/` config). The GitHub Actions config currently only contains the CodeQL workflow.
-
-## Flagged Items
-
-- No CircleCI config file is present in the current master branch (may have been removed). CI coverage details should be confirmed by the team.
