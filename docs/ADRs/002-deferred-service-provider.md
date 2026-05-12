@@ -19,5 +19,5 @@ The Contentful `Client` makes no HTTP calls on construction, but it is still an 
 ## Consequences
 
 - Applications that never touch the Contentful client pay zero construction cost.
-- The provider's `boot()` method (which publishes and merges config) still runs at boot time — this is standard Laravel behavior and required for `mergeConfigFrom` to work before any config reads happen.
+- Both `register()` and `boot()` are deferred — neither runs at application boot time. They are only called after the service is first resolved from the container. As a result, `mergeConfigFrom` (called in `boot()`) also runs lazily; config is merged on first resolution, not at bootstrap.
 - Developers expecting eager instantiation (e.g., for connection-check behavior at boot) will need to resolve the facade explicitly.

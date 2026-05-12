@@ -13,7 +13,7 @@ This package exists to integrate the Contentful Content Delivery API (CDA) into 
 1. Implement HTTP calls directly in this package
 2. Wrap the official Contentful PHP Delivery SDK (`contentful/contentful`)
 
-The package has depended on `contentful/contentful` since its initial commit (2015). The CHANGELOG shows the dependency version was bumped from v4 to v7 (v9.0.0 release, Jan 2023) as the upstream SDK evolved.
+The package has depended on `contentful/contentful` since its initial commit (2015). The CHANGELOG shows the dependency version was bumped from v6 to v7 (v9.0.0 release, Jan 2023) as the upstream SDK evolved.
 
 ## Decision
 
@@ -23,5 +23,5 @@ Delegate all CDA/Preview API interaction to `contentful/contentful`, pinned to `
 
 - This package's scope is intentionally narrow: service provider, config, facade, and integration telemetry only.
 - Any bug in CDA behavior (query building, response parsing, error handling) should be filed against `contentful/contentful`, not this repo.
-- Major version bumps in `contentful/contentful` typically require a corresponding major version bump here (as seen in the v8→v9 transition when PHP Delivery SDK v4 was adopted).
+- Major version bumps in `contentful/contentful` typically require a corresponding major version bump here (as seen in the v8→v9 transition when PHP Delivery SDK v7 was adopted).
 - The `contentful/core` package is also a direct dependency because `IntegrationInterface` (used for telemetry tagging) lives there, not in `contentful/contentful`.
