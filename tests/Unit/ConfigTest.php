@@ -23,7 +23,7 @@ class ConfigTest extends BaseTestCase
         $this->assertSame('test_space', config('contentful.delivery.space'));
     }
 
-    protected function getEnvironmentSetUp($app)
+    protected function getEnvironmentSetUp($app): void
     {
         $app['config']->set('contentful.delivery.space', 'test_space');
     }

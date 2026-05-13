@@ -29,7 +29,7 @@ class ContentfulServiceProvider extends ServiceProvider implements IntegrationIn
     /**
      * Register any other events for your application.
      */
-    public function boot()
+    public function boot(): void
     {
         $configFile = (string) realpath(__DIR__.'/config/contentful.php');
 
@@ -43,7 +43,7 @@ class ContentfulServiceProvider extends ServiceProvider implements IntegrationIn
     /**
      * Register the service provider.
      */
-    public function register()
+    public function register(): void
     {
         $this->app->singleton(Client::class, function (Application $app): Client {
             $config = $app['config'];
