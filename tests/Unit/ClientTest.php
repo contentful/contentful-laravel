@@ -17,7 +17,7 @@ use Contentful\Tests\Laravel\TestCase;
 
 class ClientTest extends TestCase
 {
-    public function testGetSpace()
+    public function testGetSpace(): void
     {
         $this->assertInstanceOf(Client::class, ContentfulDelivery::getFacadeRoot());
     }
