@@ -18,12 +18,12 @@ class ConfigTest extends BaseTestCase
 {
     use CreatesApplication;
 
-    public function testGetConfig()
+    public function testGetConfig(): void
     {
         $this->assertSame('test_space', config('contentful.delivery.space'));
     }
 
-    protected function getEnvironmentSetUp($app)
+    protected function getEnvironmentSetUp($app): void
     {
         $app['config']->set('contentful.delivery.space', 'test_space');
     }
